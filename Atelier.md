@@ -10,6 +10,27 @@ Vous allez completer une API de livres.
 
 ---
 
+## Express en quelques mots
+
+Express est un petit framework Node.js qui permet de creer un serveur web et de definir des routes.
+
+Une route, c'est une combinaison entre :
+
+- une methode HTTP, par exemple `GET`, `POST` ou `DELETE`
+- une URL, par exemple `/books` ou `/books/2`
+- une fonction qui recoit la requete et renvoie une reponse
+
+Dans Express, on utilise souvent :
+
+- `req` pour lire ce que le client envoie : parametres, query, body
+- `res` pour renvoyer une reponse au client
+- `res.json(...)` pour renvoyer du JSON
+- `res.status(...)` pour choisir le code HTTP
+
+TypeScript ajoute du typage par-dessus JavaScript. Ici, il sert surtout a rendre le code plus clair et a eviter certaines erreurs avant meme de lancer le serveur.
+
+---
+
 ## Objectifs
 
 A la fin de l'atelier, vous saurez :
@@ -76,7 +97,7 @@ Pour Bien Commencer/src/routes/books.routes.ts
 
 ### Fichiers qui doivent etre presents avant de commencer le workshop
 
-- `Atelier`
+- `atelier`
 - `Pour Bien Commencer/.gitignore`
 - `Pour Bien Commencer/package.json`
 - `Pour Bien Commencer/package-lock.json`
@@ -99,7 +120,7 @@ Il ne doit pas y avoir de dossier `node_modules/` ou `dist/` a la racine de l'at
 
 ```txt
 .
-├── Atelier
+├── atelier
 └── Pour Bien Commencer/
     ├── .gitignore
     ├── package-lock.json
@@ -126,7 +147,7 @@ Ce que chaque fichier fait :
 
 ## Installation
 
-Depuis le dossier ou se trouve `Atelier`, entrez dans le starter :
+Depuis le dossier ou se trouve `atelier`, entrez dans le starter :
 
 ```bash
 cd "Pour Bien Commencer"
@@ -557,19 +578,19 @@ ls -l
 ls -la
 ls -la 'Pour Bien Commencer'
 git status --short
-file Atelier
+file atelier
 find . -maxdepth 2 -print
 find . -maxdepth 3 -print
 find . -maxdepth 2 -type d -name dist -o -name node_modules
 rg --files
 rg --files -g '!node_modules' -g '!dist'
 rg --files -g 'README*' -g '!node_modules'
-rg -n "src/|package.json|tsconfig|\\.gitignore|npm install|npm run|npm start|Structure du projet|Fichiers" Atelier
-rg -n "src/|package.json|tsconfig|\\.gitignore|npm install|npm run|npm start|mkdir -p|sed -n|mv |cd \"Pour" Atelier
-sed -n '1,220p' Atelier
-sed -n '1,260p' Atelier
-sed -n '221,440p' Atelier
-sed -n '35,140p' Atelier
+rg -n "src/|package.json|tsconfig|\\.gitignore|npm install|npm run|npm start|Structure du projet|Fichiers" atelier
+rg -n "src/|package.json|tsconfig|\\.gitignore|npm install|npm run|npm start|mkdir -p|sed -n|mv |cd \"Pour" atelier
+sed -n '1,220p' atelier
+sed -n '1,260p' atelier
+sed -n '221,440p' atelier
+sed -n '35,140p' atelier
 sed -n '1,220p' 'Pour Bien Commencer/package.json'
 sed -n '1,220p' 'Pour Bien Commencer/src/routes/books.routes.ts'
 sed -n '1,220p' 'Pour Bien Commencer/src/data/books.ts'
@@ -585,6 +606,7 @@ Commandes de creation, installation et verification :
 ```bash
 mkdir -p src/data src/routes src/types
 mv .gitignore package.json package-lock.json tsconfig.json src 'Pour Bien Commencer'/
+mv Atelier atelier
 cd "Pour Bien Commencer"
 node --version
 npm --version
